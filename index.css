@@ -1,0 +1,26 @@
+
+/* Global styles (body, html, resets) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+}
+
+/* media query */
+@media (max-width:1200px) {
+    .container{
+      padding-left: 5%;
+      padding-right: 5%;
+    } 
+
+    .btn{
+      padding:14px 32px;
+    }
+}
