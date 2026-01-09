@@ -1,0 +1,210 @@
+.contact{
+    margin:80px auto;
+    max-width: 90%;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.contact-col{
+    flex-basis: 48%;
+    color:#676767;
+}
+
+.contact-col h3{
+    font-weight: 500;
+    color:#000F38;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-col h3 img{
+   width: 35px;
+   margin-left: 10px;
+}
+
+.contact-col p{
+    max-width: 450px;
+    list-style: 0.3;
+ }
+
+ .contact-col ul li{
+   display: flex;
+   align-items: center;
+   margin: 20px 0;
+ }
+
+ .contact-col ul li img{
+    width:25px;
+    margin-right: 10px;
+  }
+
+  .contact form input,.contact form textarea{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border: 0;
+    outline: 0;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    resize: none;
+    background: #ebecfe;
+  }
+
+  .contact-col span{
+    display: block;
+    margin: 20px 0;
+  }
+
+
+
+  /* -------------------------
+   ERROR MESSAGE UNDER INPUT
+--------------------------*/
+.error {
+    color: #ff3333;
+    font-size: 14px;
+    margin-top: -8px;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  
+  
+  /* -------------------------
+     STATUS <span> MESSAGE
+  --------------------------*/
+  .contact-col span {
+    display: block;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 6px;
+    width: fit-content;
+    transition: 0.3s ease-in-out;
+  }
+  
+  
+  /* When JS adds status messages dynamically */
+  .contact-col span:contains("Fill the form first") {
+    background: #ffe5e5;
+    color: #d30000;
+  }
+  
+  .contact-col span:contains("Sending") {
+    background: #fff6d6;
+    color: #c28c00;
+  }
+  
+  .contact-col span:contains("Email sent successfully") {
+    background: #e6ffd9;
+    color: #2b8a00;
+  }
+
+
+  /* ---------------------------
+   STATUS MESSAGE STYLE
+---------------------------- */
+
+.status-box {
+  margin-top: 15px;
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* ✔ Success (green box) */
+.status-box.success {
+  background: #d4edda;
+  color: #155724;
+  border-left: 4px solid #28a745;
+}
+
+/* ✖ Error (red box) */
+.status-box.error {
+  background: #f8d7da;
+  color: #721c24;
+  border-left: 4px solid #dc3545;
+}
+
+/* Checkmark Icon */
+.checkmark {
+  font-size: 20px;
+  font-weight: bold;
+  color: #28a745;
+  display: inline-block;
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* -------------------------
+  Scroll-in visibility animation
+  Applies to both contact columns (left & right)
+-------------------------- */
+
+.animate-contact .contact-anim {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: transform 0.9s cubic-bezier(.25,.8,.25,1), opacity 0.9s ease;
+  will-change: transform, opacity;
+}
+
+/* when visible */
+.animate-contact.in-view .contact-anim {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* stagger: left column first, then right */
+.animate-contact.in-view .contact-anim:nth-child(1) {
+  transition-delay: 0.15s;
+}
+.animate-contact.in-view .contact-anim:nth-child(2) {
+  transition-delay: 0.35s;
+}
+
+/* mobile tweaks */
+@media (max-width:700px) {
+  .animate-contact .contact-anim {
+    transform: translateY(60px);
+    transition: transform 0.75s cubic-bezier(.25,.8,.25,1), opacity 0.75s ease;
+  }
+  .animate-contact.in-view .contact-anim:nth-child(1) { transition-delay: 0.10s; }
+  .animate-contact.in-view .contact-anim:nth-child(2) { transition-delay: 0.20s; }
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-contact .contact-anim {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
+
+
+
+  /*media query */
+
+  @media (max-width:700px){
+    .contact{
+      display: block;
+    }
+
+    .contact-col{
+      padding:20px;
+    }
+  }
+  
