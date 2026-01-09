@@ -1,0 +1,66 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(8,0,58,0.6),rgba(8,0,58,0.3)),url('../../../assets/hero.png') center center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Reduce h1 line spacing */
+  .hero h1 {
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 1.1;       /* <-- reduced line gap */
+    margin-bottom: 1rem;    /* <-- small space below */
+  }
+  
+  /* Add more spacing under paragraph */
+  .hero p {
+    max-width: 700px;
+    margin:10px auto 20px;
+    line-height: 1.4;
+    font-weight: bolder;
+   
+  }
+  
+  /* Button spacing + styling */
+  .hero .btn {
+    padding: 12px 25px;
+    background: #fff;
+    color: #333;
+    border-radius: 30px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;               /* <-- gap between text & arrow */
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .hero .btn:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width:850px){
+    .hero-text h1{
+      font-size: 40px;
+    }
+  }
+
+  @media (max-width:650px){
+    .hero-text h1{
+      font-size: 30px;
+      max-width: 400px;
+      margin: auto;
+    }
+    .hero-text p{
+      font-size: 14px;
+      margin: 15px auto 30px;
+    }
+  }
