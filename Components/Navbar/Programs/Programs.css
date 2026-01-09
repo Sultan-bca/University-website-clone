@@ -1,0 +1,97 @@
+.programs{
+    margin:80px auto;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.program img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+}
+
+.program{
+    flex-basis: 31%;
+    position: relative;
+}
+
+.caption{
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,15,152,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    cursor: pointer;
+    opacity: 0;
+    padding-top: 70%;
+    transition: 0.4s;
+}
+
+.caption img{
+    width:60px;
+    margin-bottom: 10px;
+}
+
+.program:hover .caption{
+    opacity: 1;
+    padding-top: 0;
+}
+
+/* start state: hidden & far below */
+.animate-section .program {
+    opacity: 0;
+    transform: translateY(80px); /* bigger movement = smoother feeling */
+    transition: transform 0.9s cubic-bezier(.25,.8,.25,1), opacity 0.9s ease;
+    will-change: transform, opacity;
+  }
+  
+  /* final visible state */
+  .animate-section.in-view .program {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* stagger animation for smooth reveal */
+  .animate-section.in-view .program:nth-child(1) {
+    transition-delay: 0.15s;
+  }
+  .animate-section.in-view .program:nth-child(2) {
+    transition-delay: 0.70s;
+  }
+  .animate-section.in-view .program:nth-child(3) {
+    transition-delay: 0.95s;
+  }
+  
+  /* mobile */
+  @media (max-width: 650px) {
+    .animate-section .program {
+      transform: translateY(60px);
+      transition: transform 0.75s cubic-bezier(.25,.8,.25,1), opacity 0.75s ease;
+    }
+    .animate-section.in-view .program:nth-child(1) { transition-delay: 0.10s; }
+    .animate-section.in-view .program:nth-child(2) { transition-delay: 0.20s; }
+    .animate-section.in-view .program:nth-child(3) { transition-delay: 0.30s; }
+  }
+  
+  
+
+/* media quwey */
+@media (max-width:650px){
+    .programs{
+        flex-direction: column;
+    }
+
+    .program{
+        flex-basis: 100%;
+        margin: 20px;
+    }
+}
